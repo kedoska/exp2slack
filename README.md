@@ -1,6 +1,10 @@
-### Exp2Slack
+#Exp2Slack
 
-Take the `error` and bother people on slack with it.
+`try`, `catch` and `slack`
+
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/11739105/41500837-db479678-715e-11e8-8869-3daab649a86b.png" alt="exp2slack" style="max-width:100%;">
+</p>
 
 ### Before u start
 
@@ -16,4 +20,3 @@ Take the `error` and bother people on slack with it.
 
 1. [error-stack-parser](https://github.com/stacktracejs/error-stack-parser)
 2. [node-slack-sdk](https://github.com/slackapi/node-slack-sdk) (@slack/client)
-
