@@ -1,9 +1,7 @@
 Exp2Slack
 =========
 
-`try`, `catch` and `slack`
-
-You can use this library to report errors to slack from your node application, as a ExpressJs middleware or standalone library.
+You can use this to report errors to Slack from your node application, **as an ExpressJs middleware** or **standalone library**.
 
 <p align="center">
     <img src="https://user-images.githubusercontent.com/11739105/41510978-ac3989c4-7233-11e8-976b-2e3abe0199cb.png" alt="exp2slack" style="max-width:100%;">
@@ -16,7 +14,7 @@ You can use this library to report errors to slack from your node application, a
 
 ### As express middleware
 
-See the example and make sure you are initializing this middleware AFTER all your `app` setup/routes. Also consider that when this *is a middleware* it will:
+See the [example](https://github.com/kedoska/exp2slack/blob/master/examples/express-middleware.js) and make sure you are initializing this middleware AFTER all your `app` setup/routes. Also consider that when this *is a middleware* it will:
 
 1. report the error to slack (wait for slack to reply)
 2. call `next` passing the original error in the express pipeline. This will may slowdown your application (if it is firing a lot of errors).
@@ -24,6 +22,9 @@ See the example and make sure you are initializing this middleware AFTER all you
 ```javascript
 app.use((exp2Slack(url)))
 ```
+
+More details about Express Error Handling available [here](https://expressjs.com/en/guide/error-handling.html)
+
 
 ### Dependencies
 
