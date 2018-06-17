@@ -2,6 +2,7 @@ const { hostname, platform, release } = require('os')
 const pkg = require('./package.json')
 const ErrorStackParser = require('error-stack-parser')
 const { IncomingWebhook } = require('@slack/client')
+let webhook = undefined
 
 const isError = (err) => (err instanceof Error)
 
@@ -43,7 +44,6 @@ const buildErrorStack = (items = []) => {
     "text": text,
     "ts": new Date().getTime() / 1000
   }
-  console.dir(errorStack)
   return errorStack
 }
 
@@ -73,7 +73,7 @@ const notify = (err, next) => {
   })
 }
 
-const exp2Slack = (url) => {
+const exp2slack = (url) => {
 
   webhook = new IncomingWebhook(url)
 
@@ -86,6 +86,6 @@ const exp2Slack = (url) => {
   }
 }
 
-module.exports = exp2Slack
-module.exports.configure = exp2Slack
+module.exports = exp2slack
+module.exports.configure = exp2slack
 module.exports.notify = notify

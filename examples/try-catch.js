@@ -1,4 +1,4 @@
-const { configure, notify } = require('../index')
+const { configure, notify } = require('../lib/exp2slack')
 const url = 'https://hooks.slack.com/services/XXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 
 // configure the hook url
