@@ -26,9 +26,11 @@ const buildErrorStack = (items = []) => {
       let fileName = x.fileName.replace(__dirname, '')
       if (fileName.indexOf('node_modules') > -1) {
         const moduleName = fileName.split('/')[2]
-        console.log(moduleName)
-        fileName = fileName.replace(`/node_modules/${moduleName}`, `-> ${moduleName}`)
-        console.log(fileName)
+        if (process.platform === "win32") {
+          fileName = fileName.replace(`\\node_modules\\${moduleName}`, `-> ${moduleName}`)
+        } else {
+          fileName = fileName.replace(`/node_modules/${moduleName}`, `-> ${moduleName}`)
+        }
       }
       let icon = ''
       if (i === 0) {
