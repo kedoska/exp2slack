@@ -1,6 +1,6 @@
 {
   "name": "@kedoska/exp2slack",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Send errors to slack",
   "main": "lib/exp2slack.js",
   "engines": {
